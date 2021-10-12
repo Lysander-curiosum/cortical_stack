@@ -37,9 +37,6 @@ class Perceptron(object):
        def fit(self, X, y):
 
            """Fit training data.
-   If you are not yet familiar with Python's scientific libraries or need a refresher, please see the following resources:
-• NumPy: https://sebastianraschka.com/pdf/books/ dlb/appendix_f_numpy-intro.pdf
-• pandas: https://pandas.pydata.org/pandas-docs/ stable/10min.html
 Parameters
 [ 25 ]
  
