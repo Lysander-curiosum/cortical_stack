@@ -1,4 +1,4 @@
-
+import functools
 
 """
 SO MUCH OF THIS INFORMATION IS ABSTRACTED

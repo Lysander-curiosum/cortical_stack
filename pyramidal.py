@@ -1,6 +1,7 @@
 import numpy as np
 import math
 import perceptron as pc
+import basal as bs
 
 
 
@@ -49,15 +50,15 @@ ESPS (Excitatory Postsynaptic Potential)
 """
 
 class pyramidal(object):
-    def __init__(self, type: str, soma: int, basal_dendrites, apical_dendrite, axon, collateral_axon,
+    def __init__(self, type: str, soma: int, basal_dendrites: bs, apical_dendrite, axon, collateral_axon,
     ESPS):
-        self.type =  type
-        self.soma = soma
-        self.basal_dendrites = basal_dendrites
-        self.apical_dendrite = apical_dendrite
-        self.axon = axon
-        self.collateral_axon = collateral_axon
-        self.ESPS = ESPS
+        self._type =  type
+        self._soma = soma
+        self._basal_dendrites = basal_dendrites
+        self._apical_dendrite = apical_dendrite
+        self._axon = axon
+        self._collateral_axon = collateral_axon
+        self._ESPS = ESPS
     
     # general notes for the class:
     # some functions that are relevant to the pyramidal cell
@@ -80,43 +81,40 @@ class pyramidal(object):
     """
     def codify_soma(self, code):
       # gather length of the matrix
-      height = len(self.soma)
-      length = len(self.soma[0])
+      height = len(self._soma)
+      length = len(self._soma[0])
       for x in range(height):
         for y in range(length):
-          self.soma[x][y] = code[x][y]
+          self._soma[x][y] = code[x][y]
 
 
     # returns the type of this pyramidal neuron, makes complexity of 
     # the instruction set apparent
     def ret_type(self, to_change):
-     self.type = to_change
+     self._type = to_change
     
+
+
+
     """
     A neuron either fires, or doesn't
     Contritbutes to the global instruction set of all the neurons in the layer, which dictate towards
     an instruction
     Fires to a global matrix, which is the product of all the individual neurons (Average/Collection)
     Releases either a 1 or a 0
+    Notes:
+      So, how does a neuron truly intepret a signal?
+      - Each dendrite receives a variety of signals
+      - Obeys the rules of a logic gate to decide which signal to pass on
+      - So for each dendrite, should there be a separate intepretation?
     """
-    def fire():
+    def fire(self):
+      return 0
 
-
-
-# floating in the ether
-# just stay coding up
-#building an example soma
-b = [[10] * 10] * 10
-
-
-for x in range(9):
-  for y in range(9):
-    b[x][y] = y
-
-
-# variable instances of a pyramidal cell?
-#p1 = pyramidal("commisural", b, )
-p2 = pyramidal("commisural", b, "lol", "lol", "lol", "lol")
+    def intepret_signals(self):
+      # so each of the basal dendrites will have signals stored
+      # or, they can be set?
+      return 0
 
 
 
