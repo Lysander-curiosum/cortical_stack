@@ -1,5 +1,5 @@
 # cortical_stack
-A working representation of the cortical layers. 
+A representation of the cortical layers. 
 
 The purpose is a general representation of a cortical stack, from the basal dendrites of a pyramidal neuron to the layers themselves.
 
